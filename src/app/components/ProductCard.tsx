@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductCard() {
     const products = [
@@ -62,18 +63,22 @@ export default function ProductCard() {
                         className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out"
                         style={{ height: "420px" }} // Increased height
                     >
-                        <Image
-                            src={product.image}
-                            alt={product.name}
-                            width={200}
-                            height={200}
-                            className="object-cover w-full h-56" // Increased image height
-                        />
-                        <div className="bg-[#F4F5F7] p-6">
-                            <h3 className="font-bold text-lg">{product.name}</h3>
-                            <h4 className="text-[#898989]">{product.description}</h4>
-                            <p className="font-semibold text-black">{product.price}</p>
-                        </div>
+                        <Link href="/SingleProduct">
+
+                            <Image
+                                src={product.image}
+                                alt={product.name}
+                                width={200}
+                                height={200}
+                                className="object-cover w-full h-56" // Increased image height
+                            />
+                            <div className="bg-[#F4F5F7] p-6">
+                                <h3 className="font-bold text-lg">{product.name}</h3>
+                                <h4 className="text-[#898989]">{product.description}</h4>
+                                <p className="font-semibold text-black">{product.price}</p>
+                            </div>
+                        </Link>
+
                     </div>
                 ))}
             </div>
