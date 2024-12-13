@@ -32,7 +32,7 @@ export default function HeroSection() {
             <h3 className="text-center py-4 font-bold">Dining</h3>
           </div>
           <div>
-            <Image src="/living.png" alt="Living Furniture" width={300} height={150} />
+            <Image src="/Living.png" alt="Living Furniture" width={300} height={150} />
             <h3 className="text-center py-4 font-bold">Living</h3>
           </div>
           <div>
