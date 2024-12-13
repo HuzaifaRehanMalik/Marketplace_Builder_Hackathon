@@ -86,8 +86,10 @@ export default function SingleProduct() {
               <span className="text-lg font-semibold">1</span>
               <button className="px-2 py-1 font-bold">+</button>
             </div>
-            <button className="bg-[#FFFFFF] text-black border px-6 py-3 rounded-md font-bold hover:bg-[#9A7924]">
-              Add to Cart
+            <button className="bg-[#FFFFFF] text-black border px-6 py-3 rounded-md font-bold hover:bg-blue-400">
+              <Link href="/Cart">
+                Add to Cart
+              </Link>
             </button>
             <button className="border px-6 py-3 rounded-md font-bold hover:bg-gray-100">
               Compare
@@ -128,11 +130,12 @@ export default function SingleProduct() {
         </div>
       </div>
       <div>
+        <h2 className="text-center font-extrabold text-3xl mb-10 p-5">Related Products</h2>
         <ProductCard />
       </div>
       <div className="flex justify-center items-center">
 
-       <button className="border-[1px] text-[#B88E2F] w-40 h-10 ">Show More</button>
+        <button className="border-[1px] text-[#B88E2F] w-40 h-10 ">Show More</button>
       </div>
     </div>
   );

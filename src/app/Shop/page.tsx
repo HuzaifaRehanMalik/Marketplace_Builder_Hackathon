@@ -83,7 +83,6 @@ export default function Shop() {
 
     return (
         <div>
-            {/* Header */}
             <div className="px-10 py-10">
                 <div className="bg-[url('/Rectangle1.png')] h-[300px] w-full flex justify-center items-center">
                     <div>
@@ -95,14 +94,12 @@ export default function Shop() {
                 </div>
             </div>
 
-            {/* Product Grid */}
             <div className="grid grid-cols-4 gap-8 px-10 py-10">
                 {products.map((product, index) => (
                     <div
                         key={index}
                         className="relative bg-white shadow-md rounded-lg overflow-hidden group"
                     >
-                        {/* Product Image */}
                         <div className="relative">
                             <Image
                                 src={product.src}
@@ -116,10 +113,12 @@ export default function Shop() {
                                     {product.badge}
                                 </span>
                             )}
-                            {/* Overlay */}
                             <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity">
                                 <button className="bg-white text-black px-4 py-2 m-2 rounded hover:bg-gray-200">
+                                   <Link href="/Cart">
                                     Add to cart
+                                   
+                                   </Link>
                                 </button>
                                 <button className="bg-white text-black px-4 py-2 m-2 rounded hover:bg-gray-200">
                                     Compare
@@ -130,7 +129,6 @@ export default function Shop() {
                             </div>
                         </div>
 
-                        {/* Product Details */}
                         <div className="p-4">
                             <h3 className="font-bold">{product.title}</h3>
                             <h4 className="text-gray-500">{product.description}</h4>

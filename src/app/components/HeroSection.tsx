@@ -41,6 +41,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+      <h2 className="text-center font-extrabold text-3xl mb-10">Our Products</h2>
     </div>
   );
 }

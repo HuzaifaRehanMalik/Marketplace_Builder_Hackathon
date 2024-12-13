@@ -63,14 +63,13 @@ export default function ProductCard() {
 
     return (
         <div className="px-10 py-10">
-            <h2 className="text-center font-extrabold text-3xl mb-10">Our Products</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {products.map((product, index) => (
                     <div
                         key={index}
                         className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out"
                     >
-                        <Link href={`/products/${product.slug}`} passHref>
+                        <Link href={`/SingleProduct`} passHref>
                             <div className="cursor-pointer">
                                 <Image
                                     src={product.image}
@@ -80,7 +79,7 @@ export default function ProductCard() {
                                     className="object-cover w-full h-56"
                                 />
                                 <div className="bg-[#F4F5F7] p-6">
-                                    <h3 className="font-bold text-lg">{product.name}</h3>
+                                    <h3 className="font-bold text-lg"> {product.name}</h3>
                                     <h4 className="text-[#898989] text-sm">{product.description}</h4>
                                     <p className="font-semibold text-black">{product.price}</p>
                                 </div>
