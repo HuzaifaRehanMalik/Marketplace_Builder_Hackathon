@@ -4,6 +4,7 @@ import { Search } from 'lucide-react';
 import { Heart } from 'lucide-react';
 import { ShoppingCart } from 'lucide-react';
 import { User } from 'lucide-react';
+import Cart from "./Cart";
 
 export default function Navebar() {
     return (
@@ -24,7 +25,8 @@ export default function Navebar() {
                     <User />
                     <Search />
                     <Heart />
-                    <ShoppingCart />
+                    <Cart />
+                        
                 </div>
 
             </div>
