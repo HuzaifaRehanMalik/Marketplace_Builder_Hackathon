@@ -1,5 +1,5 @@
 import HeroSection from "./components/HeroSection";
-import ProductCard from "./components/Product";
+import ProductCard from "./components/ProductCard";
 
 export default function Home() {
   return (
