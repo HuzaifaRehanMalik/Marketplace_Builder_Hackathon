@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/product";
 
 export default function SingleProduct() {
   return (
