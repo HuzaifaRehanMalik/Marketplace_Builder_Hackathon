@@ -23,7 +23,7 @@ interface Product {
     };
     tags: string[];
 }
-const productCard: React.FC = () => {
+const ProductCard: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [cart, setCart] = useState<Product[]>([]);
 
@@ -142,4 +142,4 @@ const productCard: React.FC = () => {
         </div>
     )
 }
-export default productCard;
+export default ProductCard;
