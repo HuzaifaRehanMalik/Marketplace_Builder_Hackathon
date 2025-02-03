@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
-import ProductCard from "../components/Product";
+import Product from "../components/Product";
+
 
 export default function SingleProduct() {
   return (
@@ -131,7 +132,7 @@ export default function SingleProduct() {
       </div>
       <div>
         <h2 className="text-center font-extrabold text-3xl mb-10 p-5">Related Products</h2>
-        <ProductCard />
+        <Product />
       </div>
       <div className="flex justify-center items-center">
 
