@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import SanityClient from '@sanity/client';
 import Image from 'next/image';
-// Correct the import path for the product type
-import { Product as ProductType } from '@/sanity/schemaTypes/product';
+import { product } from '@/sanity/schemaTypes/product';
 
 const sanity = SanityClient({
     projectId: "zls3kszt",
@@ -18,7 +17,7 @@ interface Product {
     price: number;
     discountPersentage: number;
     description: string;
-    imageUrl: string; // Corrected to match the fetched data
+    imageUrl: string;
     tags: string[];
 }
 
@@ -70,7 +69,7 @@ const ProductCard: React.FC = () => {
                         key={product._id}
                         className='bg-gray-300 shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300'>
                         <Image
-                            src={product.imageUrl} // Use imageUrl directly
+                            src={product.imageUrl}
                             alt={product.title}
                             width={300}
                             height={300}
@@ -118,7 +117,7 @@ const ProductCard: React.FC = () => {
                                     <p className='text-slate-500 text-sm'>${item.price.toFixed(2)}</p>
                                 </div>
                                 <Image
-                                    src={item.imageUrl} // Use imageUrl directly
+                                    src={item.imageUrl}
                                     alt={item.title}
                                     width={50}
                                     height={50}
