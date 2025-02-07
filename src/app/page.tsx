@@ -1,11 +1,10 @@
 import HeroSection from "./components/HeroSection";
-import Product from "./components/ProductCard";
-
+import ProductCard from "./components/ProductCard";
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <Product />
+      <ProductCard />
     </main>
   );
 }
