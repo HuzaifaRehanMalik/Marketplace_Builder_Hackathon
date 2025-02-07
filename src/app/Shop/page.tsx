@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import Product from "../components/ProductCard";
+
 
 export default function Shop() {
     const products = [
@@ -11,13 +13,7 @@ export default function Shop() {
             originalPrice: "Rp 3.500.000",
             badge: "30% Off",
         },
-        {
-            src: "/Image.png",
-            title: "Lolito",
-            description: "Luxury big sofa",
-            price: "Rp 7.000.000",
-            badge: "New",
-        },
+        
         {
             src: "/Images (1).png",
             title: "Respira",
@@ -42,6 +38,12 @@ export default function Shop() {
             title: "Pingky",
             description: "Cute bed set",
             price: "Rp 7.000.000",
+        },
+        {
+            src: "/Images (3).png",
+            title: "Grifo",
+            description: "Night lamp",
+            price: "Rp 1.500.000",
         },
         {
             src: "/Images (6).png",
@@ -142,6 +144,7 @@ export default function Shop() {
                     </div>
                 ))}
             </div>
+            <Product />
         </div>
     );
 }
