@@ -1,6 +1,13 @@
-import { client } from '@/sanityClient';
 import Image from 'next/image';
 import React from 'react';
+import { createClient } from '@sanity/client';
+
+export const client = createClient({
+    projectId: 'zls3kszt',
+    dataset: 'production',
+    useCdn: true, 
+    apiVersion: '2021-03-25', 
+});
 
 interface Product {
     id: string;
