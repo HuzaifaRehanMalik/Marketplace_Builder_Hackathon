@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import Link from "next/link";
-import ProductPage from "../[productPage]/page";
+import ProductPage from "@/app/productPage/[id]/page";
+import { client } from "@/sanity/lib/client";
 
 interface Product {
   id: string;

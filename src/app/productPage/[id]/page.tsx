@@ -1,16 +1,18 @@
 import { product } from '@/sanity/schemaTypes/product';
-import { client } from '@/sanityClient';
 import Image from 'next/image';
 import React from 'react';
+import { client } from "@/sanity/lib/client";
 
 interface Product {
-    id: string;
-    title: string;
-    price: number;
-    description: string;
-    imageUrl: string;
-    tags: string[];
+  id: string;
+  title: string;
+  price: number;
+  discountPercentage: number;
+  description: string;
+  imageUrl: string;
+  tags: string[];
 }
+
 
 const productPage = async ({ params: { id } }: { params: { id: string } }) => {
     try {
