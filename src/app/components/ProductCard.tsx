@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import Link from "next/link";
+import ProductPage from "../[productPage]/page";
 
 interface Product {
   id: string;
