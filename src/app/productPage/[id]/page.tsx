@@ -1,13 +1,7 @@
+import { product } from '@/sanity/schemaTypes/product';
+import { client } from '@/sanityClient';
 import Image from 'next/image';
 import React from 'react';
-import { createClient } from '@sanity/client';
-
-export const client = createClient({
-    projectId: 'zls3kszt',
-    dataset: 'production',
-    useCdn: true, 
-    apiVersion: '2021-03-25', 
-});
 
 interface Product {
     id: string;
@@ -18,7 +12,7 @@ interface Product {
     tags: string[];
 }
 
-const Id = async ({ params: { id } }: { params: { id: string } }) => {
+const productPage = async ({ params: { id } }: { params: { id: string } }) => {
     try {
         const query = `*[_type == "product" && _id == $id]{
             "id": _id,
@@ -40,7 +34,7 @@ const Id = async ({ params: { id } }: { params: { id: string } }) => {
         }
 
         return (
-            <div className="flex justify-center items-center min-h-screen py-10">
+            <div className="flex justify-center items-center min-h-screen">
                 <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg text-center">
                     <h1 className="text-3xl font-bold text-gray-800">{productDetail.title}</h1>
                     <Image
@@ -53,6 +47,7 @@ const Id = async ({ params: { id } }: { params: { id: string } }) => {
                     <p className="text-gray-600 mt-4">{productDetail.description}</p>
                     <p className="text-lg font-semibold text-blue-600 mt-2">${productDetail.price}</p>
 
+                    {/* Tags */}
                     <div className="mt-4 flex flex-wrap gap-2 justify-center">
                         {productDetail.tags.map((tag) => (
                             <span key={tag} className="text-xs bg-gray-200 px-2 py-1 rounded-full">
@@ -61,6 +56,7 @@ const Id = async ({ params: { id } }: { params: { id: string } }) => {
                         ))}
                     </div>
 
+                    {/* Back to Home */}
                     <a
                         href="/"
                         className="mt-6 inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
@@ -79,4 +75,4 @@ const Id = async ({ params: { id } }: { params: { id: string } }) => {
     }
 };
 
-export default Id;
+export default productPage;
