@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { client } from "@/sanityClient";
 import Image from "next/image";
 import Link from "next/link";
-import ProductPage from "@/app/productPage/[id]/page";
-import { client } from "@/sanity/lib/client";
 
 interface Product {
   id: string;
@@ -106,7 +105,6 @@ const ProductCard: React.FC = () => {
         ))}
       </div>
 
-      {/* Cart Summary */}
       <div className="mt-8 bg-slate-100 p-6 rounded-lg shadow-lg">
         <h2 className="text-lg font-black text-red-400">Cart Summary</h2>
         {cart.length > 0 ? (

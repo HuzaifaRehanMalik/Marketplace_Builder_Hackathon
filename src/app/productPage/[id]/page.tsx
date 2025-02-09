@@ -1,20 +1,17 @@
-import { product } from '@/sanity/schemaTypes/product';
 import Image from 'next/image';
 import React from 'react';
-import { client } from "@/sanity/lib/client";
+import { client } from '@/sanityClient';
 
 interface Product {
-  id: string;
-  title: string;
-  price: number;
-  discountPercentage: number;
-  description: string;
-  imageUrl: string;
-  tags: string[];
+    id: string;
+    title: string;
+    price: number;
+    description: string;
+    imageUrl: string;
+    tags: string[];
 }
 
-
-const productPage = async ({ params: { id } }: { params: { id: string } }) => {
+const ProductPage = async ({ params: { id } }: { params: { id: string } }) => {
     try {
         const query = `*[_type == "product" && _id == $id]{
             "id": _id,
@@ -49,7 +46,6 @@ const productPage = async ({ params: { id } }: { params: { id: string } }) => {
                     <p className="text-gray-600 mt-4">{productDetail.description}</p>
                     <p className="text-lg font-semibold text-blue-600 mt-2">${productDetail.price}</p>
 
-                    {/* Tags */}
                     <div className="mt-4 flex flex-wrap gap-2 justify-center">
                         {productDetail.tags.map((tag) => (
                             <span key={tag} className="text-xs bg-gray-200 px-2 py-1 rounded-full">
@@ -58,7 +54,6 @@ const productPage = async ({ params: { id } }: { params: { id: string } }) => {
                         ))}
                     </div>
 
-                    {/* Back to Home */}
                     <a
                         href="/"
                         className="mt-6 inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
@@ -77,4 +72,4 @@ const productPage = async ({ params: { id } }: { params: { id: string } }) => {
     }
 };
 
-export default productPage;
+export default ProductPage;
